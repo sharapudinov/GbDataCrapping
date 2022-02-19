@@ -1,6 +1,7 @@
 from requests import request
 from PIL import Image
 
+
 class GoogleMapsScraper:
     def __init__(self):
         self.base_url = "https://maps.googleapis.com/maps/api/"
@@ -13,9 +14,10 @@ class GoogleMapsScraper:
         )
 
 
-crapper = GoogleMapsScraper()
-lon = 41.403609
-ltd = 2.174448
-response = crapper.stritview(lon, ltd)
-with open(f'{lon}_{ltd}.jpg', 'wb') as file:
-     file.write(response.content)
+if __name__ == "__main__":
+    crapper = GoogleMapsScraper()
+    lon = 41.403609
+    ltd = 2.174448
+    response = crapper.stritview(lon, ltd)
+    with open(f'{lon}_{ltd}.jpg', 'wb') as file:
+        file.write(response.content)

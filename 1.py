@@ -12,11 +12,9 @@ class GitHubCrapper:
         return request('get', self.base_url + f'/users/{username}/repos?{params}')
 
 
-def main():
+if __name__ == "__main__":
     crapper = GitHubCrapper()
     username = 'sharapudinov'
-    response  = crapper.get_user_repos(username, type='owner', accept="application/vnd.github.v3+json")
+    response = crapper.get_user_repos(username, type='owner', accept="application/vnd.github.v3+json")
     with open(f'{username}.json', 'w') as file:
         dump(response.json(), file)
-
-main()
