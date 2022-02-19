@@ -3,7 +3,7 @@ from requests import request
 from urllib import parse
 
 
-class GitHubCrapper:
+class GitHubScrapper:
     def __init__(self):
         self.base_url = "https://api.github.com"
 
