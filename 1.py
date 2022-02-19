@@ -3,7 +3,7 @@ from requests import request
 from urllib import parse
 
 
-class GitHubScrapper:
+class GitHubScraper:
     def __init__(self):
         self.base_url = "https://api.github.com"
 
@@ -13,8 +13,8 @@ class GitHubScrapper:
 
 
 if __name__ == "__main__":
-    crapper = GitHubCrapper()
+    scraper = GitHubCrapper()
     username = 'sharapudinov'
-    response = crapper.get_user_repos(username, type='owner', accept="application/vnd.github.v3+json")
+    response = scraper.get_user_repos(username, type='owner', accept="application/vnd.github.v3+json")
     with open(f'{username}.json', 'w') as file:
         dump(response.json(), file)

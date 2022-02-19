@@ -15,9 +15,9 @@ class GoogleMapsScraper:
 
 
 if __name__ == "__main__":
-    crapper = GoogleMapsScraper()
+    scraper = GoogleMapsScraper()
     lon = 41.403609
     ltd = 2.174448
-    response = crapper.stritview(lon, ltd)
+    response = scraper.stritview(lon, ltd)
     with open(f'{lon}_{ltd}.jpg', 'wb') as file:
         file.write(response.content)
