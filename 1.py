@@ -13,7 +13,7 @@ class GitHubScraper:
 
 
 if __name__ == "__main__":
-    scraper = GitHubCrapper()
+    scraper = GitHubScraper()
     username = 'sharapudinov'
     response = scraper.get_user_repos(username, type='owner', accept="application/vnd.github.v3+json")
     with open(f'{username}.json', 'w') as file:
