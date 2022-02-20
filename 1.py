@@ -1,6 +1,4 @@
-import json
 from pprint import pprint
-
 from bs4 import BeautifulSoup as BS
 from requests import request
 from urllib import parse
