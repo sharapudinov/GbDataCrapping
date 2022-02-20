@@ -16,8 +16,19 @@ class GoogleMapsScraper:
 
 if __name__ == "__main__":
     scraper = GoogleMapsScraper()
-    lon = 41.403609
-    ltd = 2.174448
-    response = scraper.stritview(lon, ltd)
-    with open(f'{lon}_{ltd}.jpg', 'wb') as file:
+    while True:
+        try:
+            lon = float(input("Широта:"))
+            break
+        except:
+            continue
+    while True:
+        try:
+            lat = float(input("Долгота:"))
+            break
+        except:
+            continue
+
+    response = scraper.stritview(lon, lat)
+    with open(f'{lon}_{lat}.jpg', 'wb') as file:
         file.write(response.content)
