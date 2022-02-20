@@ -1,3 +1,4 @@
+import json
 from pprint import pprint
 from bs4 import BeautifulSoup as BS
 from requests import request
@@ -42,5 +43,8 @@ class HHScraper:
 
 if __name__ == "__main__":
     scrapper = HHScraper()
-    vacancy = input('Введите название вакансии: ')
-    pprint(scrapper.vacancy(text=vacancy))
+    vacancy_name = input('Введите название вакансии: ')
+    vacancies = scrapper.vacancy(text=vacancy_name)
+
+    with open(f'{vacancy_name}.txt', 'w') as file:
+        json.dump(vacancies, file)
